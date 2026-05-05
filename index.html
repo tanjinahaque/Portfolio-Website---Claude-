@@ -23,8 +23,10 @@
         <ul role="list">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#design-skills">Design</a></li>
           <li><a href="#work">Work</a></li>
           <li><a href="#certifications">Certs</a></li>
+          <li><a href="#resume">Resume</a></li>
           <li><a href="#contact" class="nav-cta">Contact</a></li>
         </ul>
         <button class="hamburger" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu">
@@ -37,8 +39,10 @@
         <ul role="list">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#design-skills">Design</a></li>
           <li><a href="#work">Work</a></li>
           <li><a href="#certifications">Certs</a></li>
+          <li><a href="#resume">Resume</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -181,6 +185,39 @@
       </div>
     </section>
 
+    <!-- Design Skills -->
+    <section id="design-skills" aria-labelledby="design-skills-heading">
+      <div class="container">
+        <h2 id="design-skills-heading">Design Skills</h2>
+        <p class="section-sub">Design strengths that help teams create clear, inclusive, and usable digital experiences from the start.</p>
+        <div class="design-skills-layout">
+          <article class="design-feature">
+            <span class="design-kicker">Inclusive by default</span>
+            <h3>Accessible Product Design</h3>
+            <p>I translate accessibility standards into practical design decisions, from content structure and interaction patterns to inclusive user flows.</p>
+          </article>
+          <ul class="design-skills-list" role="list">
+            <li>
+              <h3>Wireframing &amp; Prototyping</h3>
+              <p>Low- and high-fidelity flows that make usability, hierarchy, and accessibility decisions visible early.</p>
+            </li>
+            <li>
+              <h3>Design Systems</h3>
+              <p>Reusable components, states, and documentation that help designers and developers build consistently.</p>
+            </li>
+            <li>
+              <h3>Visual Accessibility</h3>
+              <p>Color contrast, readable typography, spacing, focus states, and layouts that support scanning and comprehension.</p>
+            </li>
+            <li>
+              <h3>UX Review</h3>
+              <p>Heuristic evaluations that connect user needs, accessibility requirements, and product goals.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- Work / Case Studies -->
     <section id="work" aria-labelledby="work-heading">
       <div class="container">
@@ -260,6 +297,54 @@
             </div>
           </li>
         </ul>
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" aria-labelledby="resume-heading">
+      <div class="container">
+        <div class="resume-header">
+          <div>
+            <h2 id="resume-heading">Resume</h2>
+            <p class="section-sub">A quick view of my experience, education, and professional focus.</p>
+          </div>
+          <a href="#contact" class="btn btn-outline">Request Full Resume</a>
+        </div>
+        <div class="resume-grid">
+          <article class="resume-card resume-summary">
+            <h3>Professional Summary</h3>
+            <p>Accessibility tester and inclusive design advocate with experience auditing websites, mobile apps, documents, and product workflows against WCAG and Section 508 requirements.</p>
+          </article>
+          <article class="resume-card">
+            <span class="resume-date">2021 - Present</span>
+            <h3>Accessibility Tester</h3>
+            <p class="resume-org">Digital Accessibility Consultant</p>
+            <ul class="resume-list">
+              <li>Conduct manual and automated audits for web and mobile experiences.</li>
+              <li>Document findings with severity, user impact, and remediation guidance.</li>
+              <li>Partner with design, engineering, and QA teams to prevent repeat issues.</li>
+            </ul>
+          </article>
+          <article class="resume-card">
+            <span class="resume-date">2018 - 2021</span>
+            <h3>QA Analyst</h3>
+            <p class="resume-org">Product &amp; Web Testing</p>
+            <ul class="resume-list">
+              <li>Validated user flows, forms, navigation, and responsive layouts.</li>
+              <li>Created test cases for usability, accessibility, and regression coverage.</li>
+              <li>Collaborated with developers to verify fixes before release.</li>
+            </ul>
+          </article>
+          <article class="resume-card">
+            <span class="resume-date">Education</span>
+            <h3>Accessibility &amp; UX Training</h3>
+            <p class="resume-org">Continuing Professional Development</p>
+            <ul class="resume-list">
+              <li>WCAG testing, screen reader workflows, and inclusive design practices.</li>
+              <li>Usability review, design systems, and accessible content structure.</li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -379,7 +464,7 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.skill-card, .work-card, .cert-item, .testimonial').forEach(el => {
+    document.querySelectorAll('.skill-card, .design-feature, .design-skills-list li, .work-card, .cert-item, .resume-card, .testimonial').forEach(el => {
       el.classList.add('fade-in');
       observer.observe(el);
     });
