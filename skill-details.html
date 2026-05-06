@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Skill examples and details for Tanjina Haque's accessibility portfolio." />
+  <title>Skill Details — Tanjina Haque</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body class="auth-locked">
+
+  <!-- Password Gate -->
+  <div class="password-gate" id="password-gate" role="dialog" aria-labelledby="password-heading" aria-describedby="password-help" aria-modal="true">
+    <form class="password-card" id="password-form">
+      <p class="password-kicker">Private Portfolio</p>
+      <h1 id="password-heading">Enter Password</h1>
+      <p id="password-help">Please enter the password to view Tanjina Haque's skill details.</p>
+      <div class="password-field">
+        <label for="portfolio-password">Password</label>
+        <input type="password" id="portfolio-password" name="portfolio-password" autocomplete="current-password" required />
+      </div>
+      <p class="password-error" id="password-error" role="alert" hidden>Incorrect password. Please try again.</p>
+      <button type="submit" class="btn btn-primary">Unlock Skill Details</button>
+    </form>
+  </div>
+
+  <noscript>
+    <div class="password-noscript">
+      JavaScript is required to unlock this skill detail page.
+    </div>
+  </noscript>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header role="banner">
+    <nav aria-label="Skill detail navigation">
+      <div class="nav-inner">
+        <a href="index.html#hero" class="nav-logo" aria-label="Tanjina Haque — Home">TH</a>
+        <ul role="list">
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content" class="skill-detail-main">
+    <section class="skill-detail-hero" aria-labelledby="skill-detail-heading">
+      <div class="container">
+        <a href="index.html#skills" class="skill-detail-back">Back to Skills</a>
+        <p class="hero-eyebrow" id="skill-category">Skill Detail</p>
+        <h1 id="skill-detail-heading">Skill Details</h1>
+        <p class="skill-detail-lead" id="skill-lead">Examples of how this skill shows up in accessibility work.</p>
+      </div>
+    </section>
+
+    <div class="container skill-detail-content">
+      <section class="skill-detail-section" aria-labelledby="approach-heading">
+        <h2 id="approach-heading">How I Use This Skill</h2>
+        <p id="skill-approach"></p>
+      </section>
+
+      <section class="skill-detail-section" aria-labelledby="examples-heading">
+        <h2 id="examples-heading">Examples</h2>
+        <div class="skill-examples-grid" id="skill-examples"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Tanjina Haque. Built with accessibility first.</p>
+      <nav aria-label="Footer navigation">
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    const skills = {
+      'manual-testing': {
+        title: 'Manual Accessibility Testing',
+        category: 'Main Skill',
+        lead: 'Hands-on testing that catches barriers automated tools cannot reliably detect.',
+        approach: 'I test real user paths with keyboard, screen readers, zoom, responsive layouts, and browser settings. I focus on whether someone can understand, navigate, operate, and recover from errors across the full workflow.',
+        examples: [
+          {
+            title: 'Keyboard-Only Review',
+            text: 'I move through pages without a mouse to validate focus order, visible focus, skip links, menus, dialogs, forms, and custom controls.',
+            bullets: ['Tab and shift-tab order', 'Escape and modal behavior', 'No keyboard traps']
+          },
+          {
+            title: 'Screen Reader Testing',
+            text: 'I use screen readers to confirm names, roles, values, heading structure, landmarks, form labels, and status announcements.',
+            bullets: ['NVDA and VoiceOver checks', 'Form error announcements', 'Accessible names for controls']
+          },
+          {
+            title: 'Workflow Validation',
+            text: 'I test complete tasks instead of isolated components so findings reflect the real user journey.',
+            bullets: ['Account creation', 'Submission flows', 'Confirmation and recovery states']
+          }
+        ]
+      },
+      'automated-auditing': {
+        title: 'Automated Auditing',
+        category: 'Main Skill',
+        lead: 'Tool-supported testing that helps teams find repeatable accessibility defects faster.',
+        approach: 'I use automated tools as a strong first pass, then interpret the findings against WCAG criteria and real user impact. I also help teams add automated checks to regression and release workflows.',
+        examples: [
+          {
+            title: 'Audit Baselines',
+            text: 'I run scans across representative templates to identify recurring issues and establish a measurable baseline.',
+            bullets: ['Axe-core scans', 'Lighthouse checks', 'Template-level issue grouping']
+          },
+          {
+            title: 'Regression Support',
+            text: 'I help teams verify that remediated issues do not return after new development work.',
+            bullets: ['Repeatable test paths', 'CI-friendly checks', 'Known issue tracking']
+          },
+          {
+            title: 'Finding Interpretation',
+            text: 'I translate tool output into clear action, separating true blockers from warnings that need human review.',
+            bullets: ['Severity notes', 'WCAG mapping', 'Developer-ready next steps']
+          }
+        ]
+      },
+      'mobile-testing': {
+        title: 'Mobile Accessibility Testing',
+        category: 'Main Skill',
+        lead: 'iOS and Android accessibility testing for touch, screen reader, and responsive experiences.',
+        approach: 'I test mobile flows with VoiceOver and TalkBack, checking whether users can navigate, understand controls, complete gestures, rotate devices, and recover from errors across native and responsive experiences.',
+        examples: [
+          {
+            title: 'iOS Testing',
+            text: 'I validate mobile experiences with VoiceOver gestures, rotor behavior, focus movement, labels, hints, and dynamic announcements.',
+            bullets: ['VoiceOver navigation', 'Touch target checks', 'Gesture alternatives']
+          },
+          {
+            title: 'Android Testing',
+            text: 'I test TalkBack behavior, semantic labels, focus order, grouped content, and controls across Android devices.',
+            bullets: ['TalkBack navigation', 'State announcements', 'Control grouping']
+          },
+          {
+            title: 'Responsive Behavior',
+            text: 'I review layouts under mobile viewports, zoom, orientation changes, and touch interaction constraints.',
+            bullets: ['Portrait and landscape checks', 'Reflow behavior', 'Readable spacing and labels']
+          }
+        ]
+      },
+      'accessibility-annotations': {
+        title: 'Accessibility Annotations',
+        category: 'Main Skill',
+        lead: 'Figma-based annotation documents that tell developers exactly what accessibility requirements sit on top of the design.',
+        approach: 'I work directly inside Figma and use accessibility annotation kits to layer requirements onto design files. The document clarifies what developers need to build, including semantics, focus behavior, labels, instructions, states, and interaction notes.',
+        examples: [
+          {
+            title: 'Semantic Requirements',
+            text: 'I annotate components with the expected HTML semantics, ARIA roles when needed, accessible names, and structural relationships.',
+            bullets: ['Button and link purpose', 'Heading hierarchy', 'Landmark and region notes']
+          },
+          {
+            title: 'Interaction Notes',
+            text: 'I document keyboard behavior, focus order, focus return, modal rules, error handling, and live region expectations.',
+            bullets: ['Tab sequence', 'Focus management', 'Status announcements']
+          },
+          {
+            title: 'Developer Handoff',
+            text: 'I provide a Figma annotation layer that helps engineers build correctly before QA finds defects later.',
+            bullets: ['Annotation kit usage', 'Design-file overlays', 'Requirement checklist']
+          }
+        ]
+      },
+      'reporting-remediation': {
+        title: 'Reporting & Remediation',
+        category: 'Main Skill',
+        lead: 'Clear accessibility findings that help teams understand impact, priority, and the path to a fix.',
+        approach: 'I write reports that connect each issue to the affected user, the relevant standard, the reproduction steps, and practical remediation guidance. The goal is to help developers fix confidently and help product teams prioritize.',
+        examples: [
+          {
+            title: 'Issue Writeups',
+            text: 'I document what failed, where it failed, how to reproduce it, and why it matters for users.',
+            bullets: ['Steps to reproduce', 'Expected behavior', 'Actual behavior']
+          },
+          {
+            title: 'Remediation Guidance',
+            text: 'I provide recommendations that are specific enough for implementation without over-prescribing the engineering solution.',
+            bullets: ['Code-aware guidance', 'Pattern recommendations', 'Acceptance criteria']
+          },
+          {
+            title: 'Validation',
+            text: 'I retest remediated issues and confirm the fix works across the relevant assistive technology and browser combinations.',
+            bullets: ['Fix verification', 'Regression checks', 'Closure notes']
+          }
+        ]
+      },
+      'standards-compliance': {
+        title: 'Standards Compliance',
+        category: 'Main Skill',
+        lead: 'Accessibility analysis grounded in WCAG, Section 508, EN 301 549, and ADA digital requirements.',
+        approach: 'I use standards to structure testing, reporting, and remediation decisions. I translate requirements into product-specific acceptance criteria so teams understand what compliance means in the actual interface.',
+        examples: [
+          {
+            title: 'WCAG Mapping',
+            text: 'I connect findings to WCAG success criteria so teams can see the standard behind each issue.',
+            bullets: ['WCAG 2.1 and 2.2', 'Level A and AA checks', 'Criterion-specific notes']
+          },
+          {
+            title: 'Section 508 Support',
+            text: 'I help teams understand how federal accessibility expectations apply to web, mobile, and document experiences.',
+            bullets: ['508-aligned testing', 'Procurement support', 'Documentation readiness']
+          },
+          {
+            title: 'Compliance Reporting',
+            text: 'I organize findings in a way that supports internal tracking, audits, and accessibility maturity work.',
+            bullets: ['Severity and impact', 'Status tracking', 'Remediation evidence']
+          }
+        ]
+      },
+      design: {
+        title: 'Design',
+        category: 'Secondary Skill',
+        lead: 'Design support that helps teams prevent accessibility issues before development begins.',
+        approach: 'I review design decisions through an accessibility lens, looking at hierarchy, interaction patterns, content structure, color, spacing, states, and component consistency.',
+        examples: [
+          {
+            title: 'Accessible UI Review',
+            text: 'I review designs for contrast, focus states, target sizes, form clarity, and predictable interaction patterns.',
+            bullets: ['Contrast review', 'Focus state guidance', 'Touch target sizing']
+          },
+          {
+            title: 'Design System Support',
+            text: 'I help define accessible component states and usage notes so teams build consistent experiences.',
+            bullets: ['Component states', 'Error patterns', 'Accessible variants']
+          },
+          {
+            title: 'Prototype Feedback',
+            text: 'I review flows early and flag barriers before they become development defects.',
+            bullets: ['Flow clarity', 'Navigation patterns', 'Content hierarchy']
+          }
+        ]
+      },
+      research: {
+        title: 'Research',
+        category: 'Secondary Skill',
+        lead: 'Research practices that connect accessibility recommendations to real user needs and lived experience.',
+        approach: 'I use research methods to understand user workflows, pain points, assistive technology patterns, and the context behind accessibility barriers.',
+        examples: [
+          {
+            title: 'Usability Sessions',
+            text: 'I support moderated sessions with disabled users to observe how product flows work in real contexts.',
+            bullets: ['Task-based sessions', 'Assistive technology observations', 'Barrier documentation']
+          },
+          {
+            title: 'Heuristic Review',
+            text: 'I evaluate workflows against accessibility, usability, and product expectations to identify friction early.',
+            bullets: ['Workflow review', 'Error recovery', 'Navigation clarity']
+          },
+          {
+            title: 'Insight Synthesis',
+            text: 'I translate observations into practical recommendations for product, design, engineering, and QA teams.',
+            bullets: ['Theme summaries', 'User impact notes', 'Plain-language recommendations']
+          }
+        ]
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const selectedSkill = skills[params.get('skill')] || skills['manual-testing'];
+
+    document.title = `${selectedSkill.title} — Tanjina Haque`;
+    document.getElementById('skill-category').textContent = selectedSkill.category;
+    document.getElementById('skill-detail-heading').textContent = selectedSkill.title;
+    document.getElementById('skill-lead').textContent = selectedSkill.lead;
+    document.getElementById('skill-approach').textContent = selectedSkill.approach;
+
+    const examplesContainer = document.getElementById('skill-examples');
+    selectedSkill.examples.forEach(example => {
+      const card = document.createElement('article');
+      card.className = 'skill-example-card';
+
+      const heading = document.createElement('h3');
+      heading.textContent = example.title;
+      card.appendChild(heading);
+
+      const text = document.createElement('p');
+      text.textContent = example.text;
+      card.appendChild(text);
+
+      const list = document.createElement('ul');
+      list.setAttribute('role', 'list');
+      example.bullets.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = item;
+        list.appendChild(listItem);
+      });
+      card.appendChild(list);
+      examplesContainer.appendChild(card);
+    });
+
+    // Password protection
+    const PORTFOLIO_PASSWORD = 'portfolio2026';
+    const AUTH_STORAGE_KEY = 'portfolioUnlocked';
+    const passwordGate = document.getElementById('password-gate');
+    const passwordForm = document.getElementById('password-form');
+    const passwordInput = document.getElementById('portfolio-password');
+    const passwordError = document.getElementById('password-error');
+
+    function unlockPortfolio() {
+      document.body.classList.remove('auth-locked');
+      passwordGate.hidden = true;
+      sessionStorage.setItem(AUTH_STORAGE_KEY, 'true');
+    }
+
+    if (sessionStorage.getItem(AUTH_STORAGE_KEY) === 'true') {
+      unlockPortfolio();
+    } else {
+      passwordInput.focus();
+    }
+
+    passwordForm.addEventListener('submit', event => {
+      event.preventDefault();
+      if (passwordInput.value === PORTFOLIO_PASSWORD) {
+        unlockPortfolio();
+        const mainContent = document.getElementById('main-content');
+        mainContent.setAttribute('tabindex', '-1');
+        mainContent.focus();
+        return;
+      }
+
+      passwordError.hidden = false;
+      passwordInput.value = '';
+      passwordInput.focus();
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

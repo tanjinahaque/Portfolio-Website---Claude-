@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Case study for a state benefits portal accessibility audit by Tanjina Haque." />
+  <title>Case Study: State Benefits Portal Audit — Tanjina Haque</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body class="auth-locked">
+
+  <!-- Password Gate -->
+  <div class="password-gate" id="password-gate" role="dialog" aria-labelledby="password-heading" aria-describedby="password-help" aria-modal="true">
+    <form class="password-card" id="password-form">
+      <p class="password-kicker">Private Portfolio</p>
+      <h1 id="password-heading">Enter Password</h1>
+      <p id="password-help">Please enter the password to view Tanjina Haque's case study.</p>
+      <div class="password-field">
+        <label for="portfolio-password">Password</label>
+        <input type="password" id="portfolio-password" name="portfolio-password" autocomplete="current-password" required />
+      </div>
+      <p class="password-error" id="password-error" role="alert" hidden>Incorrect password. Please try again.</p>
+      <button type="submit" class="btn btn-primary">Unlock Case Study</button>
+    </form>
+  </div>
+
+  <noscript>
+    <div class="password-noscript">
+      JavaScript is required to unlock this case study.
+    </div>
+  </noscript>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header role="banner">
+    <nav aria-label="Case study navigation">
+      <div class="nav-inner">
+        <a href="index.html#hero" class="nav-logo" aria-label="Tanjina Haque — Home">TH</a>
+        <ul role="list">
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content" class="case-study-main">
+    <section class="case-study-hero" aria-labelledby="case-study-heading">
+      <div class="container">
+        <a href="index.html#work" class="case-study-back">Back to Featured Work</a>
+        <p class="hero-eyebrow">Accessibility Case Study</p>
+        <h1 id="case-study-heading">State Benefits Portal Audit</h1>
+        <p class="case-study-lead">A WCAG-focused audit and remediation partnership for a public benefits application serving millions of residents across eligibility, application, document upload, and status-check workflows.</p>
+        <dl class="case-study-meta">
+          <div>
+            <dt>Role</dt>
+            <dd>Accessibility Analyst</dd>
+          </div>
+          <div>
+            <dt>Timeline</dt>
+            <dd>3 Sprints</dd>
+          </div>
+          <div>
+            <dt>Scope</dt>
+            <dd>Web Portal</dd>
+          </div>
+          <div>
+            <dt>Standards</dt>
+            <dd>WCAG 2.1 AA</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <div class="container case-study-content">
+      <section class="case-study-section" aria-labelledby="overview-heading">
+        <h2 id="overview-heading">Overview</h2>
+        <p>The portal needed to support residents applying for essential benefits, including users navigating with keyboards, screen readers, magnification, and limited bandwidth. My work focused on identifying barriers, documenting their real user impact, and helping the product team remediate issues without slowing release momentum.</p>
+      </section>
+
+      <section class="case-study-section" aria-labelledby="challenge-heading">
+        <h2 id="challenge-heading">Challenge</h2>
+        <p>The application had several complex flows: eligibility questions, account setup, multi-step forms, file upload, review, and submission confirmation. Small accessibility defects in these flows could prevent users from completing time-sensitive applications.</p>
+        <ul class="case-study-list" role="list">
+          <li>Keyboard users encountered inconsistent focus order and missing focus indicators.</li>
+          <li>Screen reader users did not always receive clear form instructions or error feedback.</li>
+          <li>Dynamic status updates were not consistently announced to assistive technology.</li>
+          <li>Some document upload controls depended too heavily on visual-only cues.</li>
+        </ul>
+      </section>
+
+      <section class="case-study-section" aria-labelledby="process-heading">
+        <h2 id="process-heading">Process</h2>
+        <ul class="case-study-list" role="list">
+          <li>Mapped critical user journeys and prioritized the paths most likely to block benefit access.</li>
+          <li>Ran manual keyboard, screen reader, zoom, contrast, and responsive checks across key pages.</li>
+          <li>Used automated tools to catch repeatable issues and confirm fixes during regression testing.</li>
+          <li>Grouped findings by severity, user impact, WCAG criterion, and remediation ownership.</li>
+          <li>Partnered with designers and engineers to clarify accessible patterns for forms, alerts, errors, and focus management.</li>
+        </ul>
+      </section>
+
+      <section class="case-study-section" aria-labelledby="findings-heading">
+        <h2 id="findings-heading">Key Findings</h2>
+        <ul class="case-study-list" role="list">
+          <li>Form fields needed stronger programmatic labels, instructions, and error associations.</li>
+          <li>Custom controls required keyboard support and clearer state communication.</li>
+          <li>Focus management needed to be standardized after modals, validation errors, and step changes.</li>
+          <li>Several text and UI combinations needed contrast improvements to meet AA requirements.</li>
+        </ul>
+      </section>
+
+      <section class="case-study-callout" aria-labelledby="results-heading">
+        <h2 id="results-heading">Impact</h2>
+        <ul class="case-study-results" role="list">
+          <li><strong>147</strong> issues identified, categorized, and tracked through remediation.</li>
+          <li><strong>100%</strong> WCAG 2.1 AA compliance reached for audited critical flows.</li>
+          <li><strong>97%</strong> screen reader task success rate after remediation validation.</li>
+        </ul>
+      </section>
+
+      <section class="case-study-section" aria-labelledby="reflection-heading">
+        <h2 id="reflection-heading">Reflection</h2>
+        <p>The most important lesson from this project was that accessibility analysis works best when it connects standards to human consequences. The team moved faster when findings explained not only what failed, but who was blocked, why it mattered, and what pattern could prevent the issue from returning.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Tanjina Haque. Built with accessibility first.</p>
+      <nav aria-label="Footer navigation">
+        <a href="index.html#work">Featured Work</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Password protection
+    const PORTFOLIO_PASSWORD = 'portfolio2026';
+    const AUTH_STORAGE_KEY = 'portfolioUnlocked';
+    const passwordGate = document.getElementById('password-gate');
+    const passwordForm = document.getElementById('password-form');
+    const passwordInput = document.getElementById('portfolio-password');
+    const passwordError = document.getElementById('password-error');
+
+    function unlockPortfolio() {
+      document.body.classList.remove('auth-locked');
+      passwordGate.hidden = true;
+      sessionStorage.setItem(AUTH_STORAGE_KEY, 'true');
+    }
+
+    if (sessionStorage.getItem(AUTH_STORAGE_KEY) === 'true') {
+      unlockPortfolio();
+    } else {
+      passwordInput.focus();
+    }
+
+    passwordForm.addEventListener('submit', event => {
+      event.preventDefault();
+      if (passwordInput.value === PORTFOLIO_PASSWORD) {
+        unlockPortfolio();
+        const mainContent = document.getElementById('main-content');
+        mainContent.setAttribute('tabindex', '-1');
+        mainContent.focus();
+        return;
+      }
+
+      passwordError.hidden = false;
+      passwordInput.value = '';
+      passwordInput.focus();
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

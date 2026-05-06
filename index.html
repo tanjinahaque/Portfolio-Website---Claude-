@@ -3,14 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Jordan Ellis — Accessibility Tester & Inclusive Design Advocate dedicated to building digital experiences for everyone." />
+  <meta name="description" content="Portfolio of Tanjina Haque — Accessibility Tester & Inclusive Design Advocate dedicated to building digital experiences for everyone." />
   <title>Tanjina Haque — Accessibility Tester</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body class="auth-locked">
+
+  <!-- Password Gate -->
+  <div class="password-gate" id="password-gate" role="dialog" aria-labelledby="password-heading" aria-describedby="password-help" aria-modal="true">
+    <form class="password-card" id="password-form">
+      <p class="password-kicker">Private Portfolio</p>
+      <h1 id="password-heading">Enter Password</h1>
+      <p id="password-help">Please enter the password to view Tanjina Haque's portfolio.</p>
+      <div class="password-field">
+        <label for="portfolio-password">Password</label>
+        <input type="password" id="portfolio-password" name="portfolio-password" autocomplete="current-password" required />
+      </div>
+      <p class="password-error" id="password-error" role="alert" hidden>Incorrect password. Please try again.</p>
+      <button type="submit" class="btn btn-primary">Unlock Portfolio</button>
+    </form>
+  </div>
+
+  <noscript>
+    <div class="password-noscript">
+      JavaScript is required to unlock this portfolio.
+    </div>
+  </noscript>
 
   <!-- Skip Navigation -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -23,7 +44,6 @@
         <ul role="list">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#design-skills">Design</a></li>
           <li><a href="#work">Work</a></li>
           <li><a href="#certifications">Certs</a></li>
           <li><a href="#resume">Resume</a></li>
@@ -39,7 +59,6 @@
         <ul role="list">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#design-skills">Design</a></li>
           <li><a href="#work">Work</a></li>
           <li><a href="#certifications">Certs</a></li>
           <li><a href="#resume">Resume</a></li>
@@ -80,7 +99,7 @@
       <div class="container about-grid">
         <div class="about-image-wrap">
           <div class="about-image-placeholder">
-            <img src="image/first image.jpg" alt="Jordan Ellis, Accessibility Tester" class="about-photo" />
+            <img src="image/first image.jpg" alt="Tanjina Haque, Accessibility Tester" class="about-photo" />
           </div>
           <div class="about-image-deco" aria-hidden="true"></div>
         </div>
@@ -110,110 +129,123 @@
     <section id="skills" aria-labelledby="skills-heading" class="section-tinted">
       <div class="container">
         <h2 id="skills-heading">Skills &amp; Expertise</h2>
-        <p class="section-sub">A full toolkit for finding, fixing, and preventing accessibility issues.</p>
-        <ul class="skills-grid" role="list">
+        <p class="section-sub">My core work is accessibility analysis, supported by design and research skills that help teams build more inclusive products.</p>
 
-          <li class="skill-card">
-            <div class="skill-icon" aria-hidden="true">
-              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
-                <path d="M13 20l5 5 9-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <h3>Manual Testing</h3>
-            <p>Keyboard navigation, screen reader testing with NVDA, JAWS, VoiceOver, and TalkBack across real devices.</p>
-          </li>
+        <div class="skill-group">
+          <div class="skill-heading-row">
+            <h3>Accessibility Analysis</h3>
+            <p class="skill-group-label">Main Skills</p>
+          </div>
+          <ul class="skills-grid" role="list">
 
-          <li class="skill-card">
-            <div class="skill-icon" aria-hidden="true">
-              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="5" y="8" width="30" height="24" rx="3" stroke="currentColor" stroke-width="2"/>
-                <path d="M14 16l-4 4 4 4M26 16l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <path d="M22 14l-4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3>Automated Auditing</h3>
-            <p>Axe-core, Lighthouse, Deque WorldSpace, and Pa11y integrated into CI/CD pipelines for continuous testing.</p>
-          </li>
-
-          <li class="skill-card">
-            <div class="skill-icon" aria-hidden="true">
-              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 32V14l12-6 12 6v18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <rect x="15" y="22" width="10" height="10" rx="1" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <h3>WCAG Compliance</h3>
-            <p>Deep expertise in WCAG 2.0 through 2.2, Section 508, EN 301 549, and ADA digital requirements.</p>
-          </li>
-
-          <li class="skill-card">
-            <div class="skill-icon" aria-hidden="true">
-              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="7" stroke="currentColor" stroke-width="2"/>
-                <path d="M20 4v4M20 32v4M4 20h4M32 20h4M8.1 8.1l2.8 2.8M29.1 29.1l2.8 2.8M29.1 8.1l-2.8 2.8M8.1 29.1l2.8 2.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3>User Research</h3>
-            <p>Moderated usability sessions with disabled users. Lived-experience insight that automated tools can't catch.</p>
-          </li>
-
-          <li class="skill-card">
-            <div class="skill-icon" aria-hidden="true">
-              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 28L20 12l10 16H10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                <circle cx="20" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <h3>Reporting &amp; Remediation</h3>
-            <p>Clear, prioritised VPAT reports and developer-ready remediation guides in plain language.</p>
-          </li>
-
-          <li class="skill-card">
-            <div class="skill-icon" aria-hidden="true">
-              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="6" y="10" width="28" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
-                <path d="M6 16h28" stroke="currentColor" stroke-width="2"/>
-                <path d="M14 24h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3>Team Training</h3>
-            <p>Workshops and onboarding programs for designers, developers, and QA teams on building accessible-first.</p>
-          </li>
-
-        </ul>
-      </div>
-    </section>
-
-    <!-- Design Skills -->
-    <section id="design-skills" aria-labelledby="design-skills-heading">
-      <div class="container">
-        <h2 id="design-skills-heading">Design Skills</h2>
-        <p class="section-sub">Design strengths that help teams create clear, inclusive, and usable digital experiences from the start.</p>
-        <div class="design-skills-layout">
-          <article class="design-feature">
-            <span class="design-kicker">Inclusive by default</span>
-            <h3>Accessible Product Design</h3>
-            <p>I translate accessibility standards into practical design decisions, from content structure and interaction patterns to inclusive user flows.</p>
-          </article>
-          <ul class="design-skills-list" role="list">
-            <li>
-              <h3>Wireframing &amp; Prototyping</h3>
-              <p>Low- and high-fidelity flows that make usability, hierarchy, and accessibility decisions visible early.</p>
+            <li class="skill-card">
+              <div class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                  <path d="M13 20l5 5 9-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h4>Manual Accessibility Testing</h4>
+              <p>Keyboard navigation, focus order, forms, modals, semantic structure, and screen reader behavior across real workflows.</p>
+              <a href="skill-details.html?skill=manual-testing" class="skill-detail-link">View Examples</a>
             </li>
-            <li>
-              <h3>Design Systems</h3>
-              <p>Reusable components, states, and documentation that help designers and developers build consistently.</p>
+
+            <li class="skill-card">
+              <div class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="5" y="8" width="30" height="24" rx="3" stroke="currentColor" stroke-width="2"/>
+                  <path d="M14 16l-4 4 4 4M26 16l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M22 14l-4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h4>Automated Auditing</h4>
+              <p>Axe-core, Lighthouse, Deque WorldSpace, and Pa11y used to catch repeatable issues and support regression checks.</p>
+              <a href="skill-details.html?skill=automated-auditing" class="skill-detail-link">View Examples</a>
             </li>
-            <li>
-              <h3>Visual Accessibility</h3>
-              <p>Color contrast, readable typography, spacing, focus states, and layouts that support scanning and comprehension.</p>
+
+            <li class="skill-card">
+              <div class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="12" y="4" width="16" height="32" rx="3" stroke="currentColor" stroke-width="2"/>
+                  <path d="M17 8h6M18 31h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M16 18l3 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h4>Mobile Accessibility Testing</h4>
+              <p>iOS and Android accessibility testing with VoiceOver, TalkBack, touch targets, gestures, orientation, and responsive behavior.</p>
+              <a href="skill-details.html?skill=mobile-testing" class="skill-detail-link">View Examples</a>
             </li>
-            <li>
-              <h3>UX Review</h3>
-              <p>Heuristic evaluations that connect user needs, accessibility requirements, and product goals.</p>
+
+            <li class="skill-card">
+              <div class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="7" y="7" width="26" height="26" rx="3" stroke="currentColor" stroke-width="2"/>
+                  <path d="M13 15h14M13 21h9M13 27h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M28 25l4 4M30 23l-4 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h4>Accessibility Annotations</h4>
+              <p>Figma-based accessibility annotation documents using annotation kits to define roles, labels, focus order, keyboard behavior, states, and developer requirements on top of design files.</p>
+              <a href="skill-details.html?skill=accessibility-annotations" class="skill-detail-link">View Examples</a>
             </li>
+
+            <li class="skill-card">
+              <div class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 28L20 12l10 16H10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <circle cx="20" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <h4>Reporting &amp; Remediation</h4>
+              <p>Clear issue writeups with severity, user impact, reproduction steps, and developer-ready guidance.</p>
+              <a href="skill-details.html?skill=reporting-remediation" class="skill-detail-link">View Examples</a>
+            </li>
+
+            <li class="skill-card">
+              <div class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 32V14l12-6 12 6v18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="15" y="22" width="10" height="10" rx="1" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <h4>Standards Compliance</h4>
+              <p>WCAG 2.0 through 2.2, Section 508, EN 301 549, and ADA digital accessibility requirements.</p>
+              <a href="skill-details.html?skill=standards-compliance" class="skill-detail-link">View Examples</a>
+            </li>
+
           </ul>
+        </div>
+
+        <div class="secondary-skills">
+          <article class="secondary-skill-card">
+            <div class="skill-heading-row">
+              <h3>Design</h3>
+              <p class="skill-group-label">Secondary Skill</p>
+            </div>
+            <p>I use design thinking to spot barriers earlier, clarify user flows, and support inclusive product decisions before they become accessibility defects.</p>
+            <ul class="secondary-skill-list" role="list">
+              <li>Accessible product design</li>
+              <li>Wireframing and prototyping</li>
+              <li>Design systems and reusable components</li>
+              <li>Visual accessibility, contrast, spacing, and focus states</li>
+            </ul>
+            <a href="skill-details.html?skill=design" class="skill-detail-link">View Examples</a>
+          </article>
+
+          <article class="secondary-skill-card">
+            <div class="skill-heading-row">
+              <h3>Research</h3>
+              <p class="skill-group-label">Secondary Skill</p>
+            </div>
+            <p>I bring user-centered research methods into accessibility work so recommendations reflect real people, assistive technology use, and lived experience.</p>
+            <ul class="secondary-skill-list" role="list">
+              <li>Usability research with disabled users</li>
+              <li>Heuristic evaluation and workflow review</li>
+              <li>Interview synthesis and accessibility insights</li>
+              <li>Plain-language recommendations for product teams</li>
+            </ul>
+            <a href="skill-details.html?skill=research" class="skill-detail-link">View Examples</a>
+          </article>
         </div>
       </div>
     </section>
@@ -225,7 +257,7 @@
         <p class="section-sub">Selected case studies and impact highlights.</p>
         <div class="work-grid" role="list">
 
-          <article class="work-card" role="listitem">
+          <article class="work-card case-study-preview" role="listitem">
             <div class="work-tag">Government</div>
             <h3>State Benefits Portal Audit</h3>
             <p>Full WCAG 2.1 AA audit of a public-facing benefits application serving 2M+ residents. Identified 147 issues; remediated to 100% compliance within 3 sprints.</p>
@@ -234,9 +266,10 @@
               <li>Screen reader success rate: 54% → 97%</li>
               <li>Reduced support calls by 31%</li>
             </ul>
+            <a href="case-study-state-benefits.html" class="case-study-link">Read Case Study</a>
           </article>
 
-          <article class="work-card" role="listitem">
+          <article class="work-card case-study-preview" role="listitem">
             <div class="work-tag">Healthcare</div>
             <h3>Patient Portal Redesign</h3>
             <p>Embedded in a product team to define accessibility requirements from discovery through launch for a hospital network's digital patient portal.</p>
@@ -245,9 +278,10 @@
               <li>Colour contrast pass rate: 100%</li>
               <li>ARIA landmark structure fully implemented</li>
             </ul>
+            <a href="case-study-patient-portal.html" class="case-study-link">Read Case Study</a>
           </article>
 
-          <article class="work-card" role="listitem">
+          <article class="work-card case-study-preview" role="listitem">
             <div class="work-tag">E-Commerce</div>
             <h3>Checkout Flow Remediation</h3>
             <p>Identified and fixed keyboard trap and focus management failures in a multi-step checkout affecting ~40K monthly users with motor impairments.</p>
@@ -256,6 +290,7 @@
               <li>Focus management fully ARIA-compliant</li>
               <li>Conversion uplift of 8% post-fix</li>
             </ul>
+            <a href="case-study-checkout-remediation.html" class="case-study-link">Read Case Study</a>
           </article>
 
         </div>
@@ -398,9 +433,9 @@
           <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
         <div class="contact-links">
-          <a href="mailto:jordan@example.com" aria-label="Email Jordan">jordan@example.com</a>
-          <a href="https://linkedin.com/in/jordanellis" aria-label="Jordan Ellis on LinkedIn" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-          <a href="https://github.com/jordanellis" aria-label="Jordan Ellis on GitHub" rel="noopener noreferrer" target="_blank">GitHub</a>
+          <a href="mailto:tanjina@example.com" aria-label="Email Tanjina Haque">tanjina@example.com</a>
+          <a href="https://linkedin.com/in/tanjinahaque" aria-label="Tanjina Haque on LinkedIn" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+          <a href="https://github.com/tanjinahaque" aria-label="Tanjina Haque on GitHub" rel="noopener noreferrer" target="_blank">GitHub</a>
         </div>
       </div>
     </section>
@@ -410,7 +445,7 @@
   <!-- Footer -->
   <footer role="contentinfo">
     <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> Jordan Ellis. Built with accessibility first.</p>
+      <p>&copy; <span id="year"></span> Tanjina Haque. Built with accessibility first.</p>
       <nav aria-label="Footer navigation">
         <a href="#hero">Back to top</a>
         <a href="#about">About</a>
@@ -421,6 +456,41 @@
   </footer>
 
   <script>
+    // Password protection
+    const PORTFOLIO_PASSWORD = 'portfolio2026';
+    const AUTH_STORAGE_KEY = 'portfolioUnlocked';
+    const passwordGate = document.getElementById('password-gate');
+    const passwordForm = document.getElementById('password-form');
+    const passwordInput = document.getElementById('portfolio-password');
+    const passwordError = document.getElementById('password-error');
+
+    function unlockPortfolio() {
+      document.body.classList.remove('auth-locked');
+      passwordGate.hidden = true;
+      sessionStorage.setItem(AUTH_STORAGE_KEY, 'true');
+    }
+
+    if (sessionStorage.getItem(AUTH_STORAGE_KEY) === 'true') {
+      unlockPortfolio();
+    } else {
+      passwordInput.focus();
+    }
+
+    passwordForm.addEventListener('submit', event => {
+      event.preventDefault();
+      if (passwordInput.value === PORTFOLIO_PASSWORD) {
+        unlockPortfolio();
+        const mainContent = document.getElementById('main-content');
+        mainContent.setAttribute('tabindex', '-1');
+        mainContent.focus();
+        return;
+      }
+
+      passwordError.hidden = false;
+      passwordInput.value = '';
+      passwordInput.focus();
+    });
+
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -464,7 +534,7 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.skill-card, .design-feature, .design-skills-list li, .work-card, .cert-item, .resume-card, .testimonial').forEach(el => {
+    document.querySelectorAll('.skill-card, .secondary-skill-card, .work-card, .cert-item, .resume-card, .testimonial').forEach(el => {
       el.classList.add('fade-in');
       observer.observe(el);
     });
