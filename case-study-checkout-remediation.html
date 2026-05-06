@@ -74,6 +74,49 @@
             <dd>WCAG 2.1 AA</dd>
           </div>
         </dl>
+        <div class="case-study-visual-grid" role="group" aria-label="Placeholder visuals for the checkout remediation">
+          <figure class="case-visual">
+            <div class="mock-panel" aria-hidden="true">
+              <div class="mock-panel-header"><span></span><span></span><span></span></div>
+              <div class="mock-panel-body">
+                <div class="mock-flow">
+                  <div class="mock-flow-step active"></div>
+                  <div class="mock-flow-step"></div>
+                  <div class="mock-flow-step"></div>
+                  <div class="mock-flow-step"></div>
+                </div>
+                <div class="mock-field"></div>
+                <div class="mock-field mock-focus"></div>
+                <div class="mock-button"></div>
+              </div>
+            </div>
+            <figcaption>Checkout stepper placeholder with visible focus treatment</figcaption>
+          </figure>
+          <figure class="case-visual">
+            <div class="mock-panel" aria-hidden="true">
+              <div class="mock-panel-body">
+                <div class="mock-card-stack">
+                  <div class="mock-card"><div class="mock-card-line"></div><div class="mock-card-line short"></div></div>
+                  <div class="mock-card mock-focus"><div class="mock-card-line medium"></div><div class="mock-card-line"></div></div>
+                  <div class="mock-note">Focus returns to triggering control after modal closes.</div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Modal focus trap placeholder for keyboard remediation</figcaption>
+          </figure>
+          <figure class="case-visual">
+            <div class="mock-panel" aria-hidden="true">
+              <div class="mock-panel-header"><span></span><span></span><span></span></div>
+              <div class="mock-panel-body">
+                <div class="mock-line medium"></div>
+                <div class="mock-field"></div>
+                <div class="mock-field mock-focus"></div>
+                <div class="mock-alert">Payment error associated with card number</div>
+              </div>
+            </div>
+            <figcaption>Payment form placeholder for error association testing</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -103,6 +146,36 @@
           <li>Created regression checks for keyboard-only, screen reader, zoom, and mobile viewport testing.</li>
           <li>Validated fixes with developers before release and again after deployment.</li>
         </ul>
+        <div class="case-study-visual-grid case-study-visual-grid--two" role="group" aria-label="Placeholder remediation visuals">
+          <figure class="case-visual">
+            <div class="mock-panel" aria-hidden="true">
+              <div class="mock-panel-body">
+                <div class="mock-flow">
+                  <div class="mock-flow-step"></div>
+                  <div class="mock-flow-step active"></div>
+                  <div class="mock-flow-step"></div>
+                  <div class="mock-flow-step"></div>
+                </div>
+                <div class="mock-note">Expected tab sequence documented for each checkout state.</div>
+                <div class="mock-line medium"></div>
+              </div>
+            </div>
+            <figcaption>Keyboard path map placeholder for checkout regression checks</figcaption>
+          </figure>
+          <figure class="case-visual">
+            <div class="mock-panel" aria-hidden="true">
+              <div class="mock-panel-body">
+                <ul class="mock-checklist" role="list">
+                  <li>Overlay escape behavior verified</li>
+                  <li>Focus restoration confirmed</li>
+                  <li>Errors announced with field context</li>
+                  <li>Step changes announced consistently</li>
+                </ul>
+              </div>
+            </div>
+            <figcaption>Regression checklist placeholder for remediation validation</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section class="case-study-section" aria-labelledby="findings-heading">

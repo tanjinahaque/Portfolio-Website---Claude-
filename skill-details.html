@@ -53,8 +53,8 @@
     <section class="skill-detail-hero" aria-labelledby="skill-detail-heading">
       <div class="container">
         <a href="index.html#skills" class="skill-detail-back">Back to Skills</a>
-        <p class="hero-eyebrow" id="skill-category">Skill Detail</p>
         <h1 id="skill-detail-heading">Skill Details</h1>
+        <p class="hero-eyebrow skill-detail-category" id="skill-category">Skill Detail</p>
         <p class="skill-detail-lead" id="skill-lead">Examples of how this skill shows up in accessibility work.</p>
       </div>
     </section>
@@ -63,6 +63,11 @@
       <section class="skill-detail-section" aria-labelledby="approach-heading">
         <h2 id="approach-heading">How I Use This Skill</h2>
         <p id="skill-approach"></p>
+      </section>
+
+      <section class="skill-detail-section" aria-labelledby="visuals-heading">
+        <h2 id="visuals-heading">Visual Examples</h2>
+        <div class="skill-detail-visual-grid" id="skill-visuals"></div>
       </section>
 
       <section class="skill-detail-section" aria-labelledby="examples-heading">
@@ -89,6 +94,11 @@
         category: 'Main Skill',
         lead: 'Hands-on testing that catches barriers automated tools cannot reliably detect.',
         approach: 'I test real user paths with keyboard, screen readers, zoom, responsive layouts, and browser settings. I focus on whether someone can understand, navigate, operate, and recover from errors across the full workflow.',
+        visuals: [
+          { type: 'keyboard', caption: 'Keyboard path placeholder showing focus order through a form.' },
+          { type: 'reader', caption: 'Screen reader notes placeholder for names, roles, and announcements.' },
+          { type: 'workflow', caption: 'End-to-end task validation placeholder for multi-step flows.' }
+        ],
         examples: [
           {
             title: 'Keyboard-Only Review',
@@ -112,6 +122,11 @@
         category: 'Main Skill',
         lead: 'Tool-supported testing that helps teams find repeatable accessibility defects faster.',
         approach: 'I use automated tools as a strong first pass, then interpret the findings against WCAG criteria and real user impact. I also help teams add automated checks to regression and release workflows.',
+        visuals: [
+          { type: 'score', caption: 'Automated scan summary placeholder for template-level audit results.' },
+          { type: 'dashboard', caption: 'Issue dashboard placeholder for repeated failures and trends.' },
+          { type: 'regression', caption: 'Regression checklist placeholder for release verification.' }
+        ],
         examples: [
           {
             title: 'Audit Baselines',
@@ -135,6 +150,11 @@
         category: 'Main Skill',
         lead: 'iOS and Android accessibility testing for touch, screen reader, and responsive experiences.',
         approach: 'I test mobile flows with VoiceOver and TalkBack, checking whether users can navigate, understand controls, complete gestures, rotate devices, and recover from errors across native and responsive experiences.',
+        visuals: [
+          { type: 'mobile', caption: 'iOS and Android screen placeholders for mobile accessibility testing.' },
+          { type: 'targets', caption: 'Touch target review placeholder for spacing and tappable areas.' },
+          { type: 'orientation', caption: 'Responsive orientation placeholder for portrait and landscape checks.' }
+        ],
         examples: [
           {
             title: 'iOS Testing',
@@ -158,6 +178,11 @@
         category: 'Main Skill',
         lead: 'Figma-based annotation documents that tell developers exactly what accessibility requirements sit on top of the design.',
         approach: 'I work directly inside Figma and use accessibility annotation kits to layer requirements onto design files. The document clarifies what developers need to build, including semantics, focus behavior, labels, instructions, states, and interaction notes.',
+        visuals: [
+          { type: 'annotation', caption: 'Figma annotation placeholder for roles, names, states, and focus behavior.' },
+          { type: 'handoff', caption: 'Developer handoff placeholder showing accessibility requirements over a design.' },
+          { type: 'states', caption: 'Component state placeholder for default, focus, error, and expanded states.' }
+        ],
         examples: [
           {
             title: 'Semantic Requirements',
@@ -181,6 +206,11 @@
         category: 'Main Skill',
         lead: 'Clear accessibility findings that help teams understand impact, priority, and the path to a fix.',
         approach: 'I write reports that connect each issue to the affected user, the relevant standard, the reproduction steps, and practical remediation guidance. The goal is to help developers fix confidently and help product teams prioritize.',
+        visuals: [
+          { type: 'report', caption: 'Issue report placeholder with severity, impact, and remediation notes.' },
+          { type: 'ticket', caption: 'Developer ticket placeholder with acceptance criteria and validation steps.' },
+          { type: 'validation', caption: 'Fix validation placeholder for retesting and closure notes.' }
+        ],
         examples: [
           {
             title: 'Issue Writeups',
@@ -204,6 +234,11 @@
         category: 'Main Skill',
         lead: 'Accessibility analysis grounded in WCAG, Section 508, EN 301 549, and ADA digital requirements.',
         approach: 'I use standards to structure testing, reporting, and remediation decisions. I translate requirements into product-specific acceptance criteria so teams understand what compliance means in the actual interface.',
+        visuals: [
+          { type: 'standards', caption: 'WCAG mapping placeholder for success criteria and pass/fail status.' },
+          { type: 'matrix', caption: 'Compliance matrix placeholder for standards, evidence, and ownership.' },
+          { type: 'evidence', caption: 'Audit evidence placeholder for screenshots, notes, and remediation status.' }
+        ],
         examples: [
           {
             title: 'WCAG Mapping',
@@ -227,6 +262,11 @@
         category: 'Secondary Skill',
         lead: 'Design support that helps teams prevent accessibility issues before development begins.',
         approach: 'I review design decisions through an accessibility lens, looking at hierarchy, interaction patterns, content structure, color, spacing, states, and component consistency.',
+        visuals: [
+          { type: 'wireframe', caption: 'Accessible wireframe placeholder for hierarchy, states, and layout review.' },
+          { type: 'palette', caption: 'Color and contrast placeholder for visual accessibility decisions.' },
+          { type: 'component', caption: 'Component state placeholder for design system accessibility guidance.' }
+        ],
         examples: [
           {
             title: 'Accessible UI Review',
@@ -250,6 +290,11 @@
         category: 'Secondary Skill',
         lead: 'Research practices that connect accessibility recommendations to real user needs and lived experience.',
         approach: 'I use research methods to understand user workflows, pain points, assistive technology patterns, and the context behind accessibility barriers.',
+        visuals: [
+          { type: 'participant', caption: 'Participant session placeholder for assistive technology observations.' },
+          { type: 'journey', caption: 'User journey placeholder for task flow and barrier mapping.' },
+          { type: 'synthesis', caption: 'Research synthesis placeholder for themes, impact, and recommendations.' }
+        ],
         examples: [
           {
             title: 'Usability Sessions',
@@ -278,6 +323,50 @@
     document.getElementById('skill-detail-heading').textContent = selectedSkill.title;
     document.getElementById('skill-lead').textContent = selectedSkill.lead;
     document.getElementById('skill-approach').textContent = selectedSkill.approach;
+
+    const visualTemplates = {
+      keyboard: '<div class="skill-image-window"><div class="skill-image-topbar"><span></span><span></span><span></span></div><div class="skill-image-body"><div class="skill-image-line medium"></div><div class="skill-image-field"></div><div class="skill-image-field focused"></div><div class="skill-image-key-row"><span>Tab</span><span>Enter</span><span>Esc</span></div></div></div>',
+      reader: '<div class="skill-image-window"><div class="skill-image-body"><div class="skill-image-note">Heading level 2 announced</div><div class="skill-image-note">Button name: Submit application</div><div class="skill-image-note">Error status announced on submit</div></div></div>',
+      workflow: '<div class="skill-image-window"><div class="skill-image-body"><div class="skill-image-flow"><span class="active"></span><span></span><span></span><span></span></div><div class="skill-image-line medium"></div><div class="skill-image-line short"></div></div></div>',
+      score: '<div class="skill-image-window"><div class="skill-image-body split"><div class="skill-image-score">92</div><div class="skill-image-lines"><span></span><span></span><span></span><span></span></div></div></div>',
+      dashboard: '<div class="skill-image-window"><div class="skill-image-topbar"><span></span><span></span><span></span></div><div class="skill-image-body"><div class="skill-image-table"><span class="header"></span><span class="header"></span><span class="header"></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>',
+      regression: '<div class="skill-image-window"><div class="skill-image-body"><ul class="skill-image-checks" role="list"><li>Scan critical templates</li><li>Compare known issues</li><li>Verify fixes before release</li></ul></div></div>',
+      mobile: '<div class="skill-image-window"><div class="skill-image-body phones"><div class="skill-image-phone"><span></span><span class="focused"></span><span></span></div><div class="skill-image-phone"><span class="focused"></span><span></span><span></span></div></div></div>',
+      targets: '<div class="skill-image-window"><div class="skill-image-body target-map"><span></span><span class="large"></span><span></span><span></span></div></div>',
+      orientation: '<div class="skill-image-window"><div class="skill-image-body orientation"><div></div><div></div></div></div>',
+      annotation: '<div class="skill-image-window"><div class="skill-image-body annotation"><div class="skill-image-wireframe"><span></span><span></span><span></span></div><div class="skill-image-note">Role<br>Name<br>State</div></div></div>',
+      handoff: '<div class="skill-image-window"><div class="skill-image-body annotation"><div class="skill-image-wireframe focused"><span></span><span></span><span></span></div><div class="skill-image-note">Focus order<br>Keyboard behavior<br>Error state</div></div></div>',
+      states: '<div class="skill-image-window"><div class="skill-image-body"><div class="skill-image-state-row"><span></span><span class="focused"></span><span></span><span class="error"></span></div><div class="skill-image-line medium"></div></div></div>',
+      report: '<div class="skill-image-window"><div class="skill-image-body"><div class="skill-image-badge">High</div><div class="skill-image-line"></div><div class="skill-image-line medium"></div><div class="skill-image-note">Impact and remediation summary</div></div></div>',
+      ticket: '<div class="skill-image-window"><div class="skill-image-body"><ul class="skill-image-checks" role="list"><li>Steps to reproduce</li><li>Expected behavior</li><li>Acceptance criteria</li></ul></div></div>',
+      validation: '<div class="skill-image-window"><div class="skill-image-body split"><div class="skill-image-score">OK</div><div class="skill-image-lines"><span></span><span></span><span></span></div></div></div>',
+      standards: '<div class="skill-image-window"><div class="skill-image-body split"><div class="skill-image-score">AA</div><div class="skill-image-lines"><span></span><span></span><span></span></div></div></div>',
+      matrix: '<div class="skill-image-window"><div class="skill-image-body"><div class="skill-image-table"><span class="header"></span><span class="header"></span><span class="header"></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>',
+      evidence: '<div class="skill-image-window"><div class="skill-image-body"><div class="skill-image-card-stack"><span></span><span class="focused"></span><span></span></div><div class="skill-image-line short"></div></div></div>',
+      wireframe: '<div class="skill-image-window"><div class="skill-image-body"><div class="skill-image-wireframe"><span></span><span class="focused"></span><span></span></div></div></div>',
+      palette: '<div class="skill-image-window"><div class="skill-image-body"><div class="skill-image-palette"><span></span><span></span><span></span><span></span></div><div class="skill-image-line medium"></div></div></div>',
+      component: '<div class="skill-image-window"><div class="skill-image-body"><div class="skill-image-state-row"><span></span><span class="focused"></span><span></span><span class="error"></span></div><div class="skill-image-note">Default, hover, focus, error</div></div></div>',
+      participant: '<div class="skill-image-window"><div class="skill-image-body split"><div class="skill-image-avatar"></div><div class="skill-image-lines"><span></span><span></span><span></span></div></div></div>',
+      journey: '<div class="skill-image-window"><div class="skill-image-body"><div class="skill-image-flow"><span class="active"></span><span></span><span class="active"></span><span></span></div><div class="skill-image-note">Barrier observed during task step</div></div></div>',
+      synthesis: '<div class="skill-image-window"><div class="skill-image-body"><div class="skill-image-card-stack"><span></span><span></span><span class="focused"></span></div><div class="skill-image-line medium"></div></div></div>'
+    };
+
+    const visualsContainer = document.getElementById('skill-visuals');
+    selectedSkill.visuals.forEach(visual => {
+      const figure = document.createElement('figure');
+      figure.className = 'skill-detail-visual';
+
+      const graphic = document.createElement('div');
+      graphic.className = 'skill-detail-visual-art';
+      graphic.setAttribute('aria-hidden', 'true');
+      graphic.innerHTML = visualTemplates[visual.type];
+      figure.appendChild(graphic);
+
+      const caption = document.createElement('figcaption');
+      caption.textContent = visual.caption;
+      figure.appendChild(caption);
+      visualsContainer.appendChild(figure);
+    });
 
     const examplesContainer = document.getElementById('skill-examples');
     selectedSkill.examples.forEach(example => {
