@@ -859,6 +859,50 @@ header nav ul a[aria-current="page"]::after { width: 100%; }
   background: var(--clr-accent);
 }
 
+.soft-skills {
+  margin-top: var(--space-xl);
+}
+
+.soft-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.soft-skill-card {
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(95,69,158,0.22);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition);
+}
+
+.soft-skill-card:hover,
+.soft-skill-card:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--clr-lavender-deep);
+  background: var(--clr-surface);
+  box-shadow: var(--shadow-md);
+}
+
+.soft-skill-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+  color: var(--clr-text);
+}
+
+.soft-skill-card p {
+  color: var(--clr-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
 /* ===========================
    Skill Detail Page
    =========================== */
@@ -2186,6 +2230,10 @@ footer nav a:focus-visible {
   }
 
   .secondary-skills {
+    grid-template-columns: 1fr;
+  }
+
+  .soft-skills-grid {
     grid-template-columns: 1fr;
   }
 
