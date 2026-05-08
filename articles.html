@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Accessibility articles by Tanjina Haque." />
+  <title>Articles — Tanjina Haque</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body class="auth-locked">
+  <div class="password-gate" id="password-gate" role="dialog" aria-labelledby="password-heading" aria-describedby="password-help" aria-modal="true">
+    <form class="password-card" id="password-form">
+      <p class="password-kicker">Private Portfolio</p>
+      <h1 id="password-heading">Enter Password</h1>
+      <p id="password-help">Please enter the password to view Tanjina Haque's articles.</p>
+      <div class="password-field">
+        <label for="portfolio-password">Password</label>
+        <div class="password-input-wrap">
+          <input type="password" id="portfolio-password" name="portfolio-password" autocomplete="current-password" required />
+          <button type="button" class="password-toggle" id="password-toggle" aria-label="Show password" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <p class="password-error" id="password-error" role="alert" hidden>Incorrect password. Please try again.</p>
+      <button type="submit" class="btn btn-primary">Unlock Articles</button>
+    </form>
+  </div>
+
+  <noscript><div class="password-noscript">JavaScript is required to unlock these articles.</div></noscript>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header role="banner">
+    <nav aria-label="Article navigation">
+      <div class="nav-inner">
+        <a href="index.html#hero" class="nav-logo" aria-label="Tanjina Haque — Home">TH</a>
+        <ul role="list">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#articles">Articles</a></li>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#contact" class="nav-cta">Contact Me</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content" class="article-main">
+    <section class="article-hero" aria-labelledby="article-heading">
+      <div class="container">
+        <a href="index.html#articles" class="article-back">Back to Articles</a>
+        <p class="hero-eyebrow">Article Hub</p>
+        <h1 id="article-heading">Articles</h1>
+        <p class="article-lead">Reference pieces I can deep link to when explaining accessibility decisions, workflow practices, and inclusive product collaboration.</p>
+      </div>
+    </section>
+
+    <section class="container article-content" aria-label="All articles">
+      <div class="articles-grid" role="list">
+        <article class="article-card" role="listitem">
+          <p class="article-kicker">Accessibility Fundamentals</p>
+          <h2>Understanding Severity, User Impact, and Priority</h2>
+          <p>A practical guide for helping product teams understand why accessibility issues matter and how to prioritize them responsibly.</p>
+          <a href="article-severity-user-impact-priority.html" class="article-link">Understanding Severity, User Impact, and Priority article</a>
+        </article>
+        <article class="article-card" role="listitem">
+          <p class="article-kicker">Product Workflows</p>
+          <h2>Finding Accessibility Issues Earlier in the Sprint</h2>
+          <p>How teams can move accessibility into discovery, design review, acceptance criteria, and QA planning.</p>
+          <a href="article-accessibility-earlier-in-sprint.html" class="article-link">Finding Accessibility Issues Earlier in the Sprint article</a>
+        </article>
+        <article class="article-card" role="listitem">
+          <p class="article-kicker">Developer Handoff</p>
+          <h2>Writing Accessibility Bugs Developers Can Act On</h2>
+          <p>What to include in accessibility bugs so findings are clear, reproducible, and easier to validate.</p>
+          <a href="article-accessibility-bugs-developers-can-act-on.html" class="article-link">Writing Accessibility Bugs Developers Can Act On article</a>
+        </article>
+        <article class="article-card" role="listitem">
+          <p class="article-kicker">Code Quality</p>
+          <h2>The Importance of Semantic HTML</h2>
+          <p>Why native elements, headings, landmarks, lists, and buttons create a stronger foundation for assistive technology users.</p>
+          <a href="article-semantic-html-importance.html" class="article-link">The Importance of Semantic HTML article</a>
+        </article>
+        <article class="article-card" role="listitem">
+          <p class="article-kicker">Testing Strategy</p>
+          <h2>Why Manual Accessibility Testing Is Crucial</h2>
+          <p>How manual testing catches workflow, screen reader, keyboard, and cognitive barriers automated scans cannot reliably detect.</p>
+          <a href="article-manual-accessibility-testing-crucial.html" class="article-link">Why Manual Accessibility Testing Is Crucial article</a>
+        </article>
+        <article class="article-card" role="listitem">
+          <p class="article-kicker">Forms</p>
+          <h2>Accessible Forms: Labels, Errors, and Instructions</h2>
+          <p>Real examples of form patterns that help users understand requirements, recover from errors, and complete tasks confidently.</p>
+          <a href="article-accessible-forms-labels-errors.html" class="article-link">Accessible Forms: Labels, Errors, and Instructions article</a>
+        </article>
+        <article class="article-card" role="listitem">
+          <p class="article-kicker">Keyboard Access</p>
+          <h2>Keyboard Accessibility Beyond the Tab Key</h2>
+          <p>What to test beyond tab order, including escape behavior, arrow-key patterns, focus return, and keyboard traps.</p>
+          <a href="article-keyboard-accessibility-beyond-tab.html" class="article-link">Keyboard Accessibility Beyond the Tab Key article</a>
+        </article>
+        <article class="article-card" role="listitem">
+          <p class="article-kicker">Screen Readers</p>
+          <h2>Screen Reader Testing Without Guesswork</h2>
+          <p>A practical approach to testing names, roles, states, announcements, navigation structure, and real task completion.</p>
+          <a href="article-screen-reader-testing-without-guesswork.html" class="article-link">Screen Reader Testing Without Guesswork article</a>
+        </article>
+        <article class="article-card" role="listitem">
+          <p class="article-kicker">Interaction Design</p>
+          <h2>Designing Accessible Focus States</h2>
+          <p>How visible focus indicators support keyboard users and how teams can design focus states that meet contrast and visibility needs.</p>
+          <a href="article-designing-accessible-focus-states.html" class="article-link">Designing Accessible Focus States article</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Tanjina Haque. Built with accessibility first.</p>
+      <nav aria-label="Footer navigation">
+        <a href="index.html#articles">Articles</a>
+        <a href="index.html#contact">Contact Me</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    const PORTFOLIO_PASSWORD = 'portfolio2026';
+    const AUTH_STORAGE_KEY = 'portfolioUnlocked';
+    const passwordGate = document.getElementById('password-gate');
+    const passwordForm = document.getElementById('password-form');
+    const passwordInput = document.getElementById('portfolio-password');
+    const passwordError = document.getElementById('password-error');
+    const passwordToggle = document.getElementById('password-toggle');
+
+    function unlockPortfolio() {
+      document.body.classList.remove('auth-locked');
+      passwordGate.hidden = true;
+      sessionStorage.setItem(AUTH_STORAGE_KEY, 'true');
+    }
+
+    if (sessionStorage.getItem(AUTH_STORAGE_KEY) === 'true') {
+      unlockPortfolio();
+    } else {
+      passwordInput.focus();
+    }
+
+    passwordForm.addEventListener('submit', event => {
+      event.preventDefault();
+      if (passwordInput.value === PORTFOLIO_PASSWORD) {
+        unlockPortfolio();
+        const mainContent = document.getElementById('main-content');
+        mainContent.setAttribute('tabindex', '-1');
+        mainContent.focus();
+        return;
+      }
+
+      passwordError.hidden = false;
+      passwordInput.value = '';
+      passwordInput.focus();
+    });
+
+    passwordToggle.addEventListener('click', () => {
+      const isVisible = passwordInput.type === 'text';
+      passwordInput.type = isVisible ? 'password' : 'text';
+      passwordToggle.setAttribute('aria-label', isVisible ? 'Show password' : 'Hide password');
+      passwordToggle.setAttribute('aria-pressed', String(!isVisible));
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

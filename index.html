@@ -50,12 +50,13 @@
       <div class="nav-inner">
         <a href="#hero" class="nav-logo" aria-label="Tanjina Haque — Home">TH</a>
         <ul role="list">
-          <li><a href="#about">About</a></li>
+          <li><a href="#about">About Me</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#work">Work</a></li>
           <li><a href="#certifications">Certifications</a></li>
           <li><a href="#resume" aria-label="Résumé">Resume</a></li>
-          <li><a href="#contact" class="nav-cta">Contact Me</a></li>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="#contact">Contact Me</a></li>
         </ul>
         <button class="hamburger" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu">
           <span aria-hidden="true"></span>
@@ -65,11 +66,12 @@
       </div>
       <div id="mobile-menu" class="mobile-menu" hidden>
         <ul role="list">
-          <li><a href="#about">About</a></li>
+          <li><a href="#about">About Me</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#work">Work</a></li>
           <li><a href="#certifications">Certifications</a></li>
           <li><a href="#resume" aria-label="Résumé">Resume</a></li>
+          <li><a href="#articles">Articles</a></li>
           <li><a href="#contact">Contact Me</a></li>
         </ul>
       </div>
@@ -365,7 +367,7 @@
     </section>
 
     <!-- Certifications -->
-    <section id="certifications" aria-labelledby="certs-heading" class="section-tinted">
+    <section id="certifications" aria-labelledby="certs-heading">
       <div class="container">
         <h2 id="certs-heading">Certifications</h2>
         <p class="section-sub">Formal credentials that back the work.</p>
@@ -446,6 +448,37 @@
               <li>Usability review, design systems, and accessible content structure.</li>
             </ul>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Articles -->
+    <section id="articles" aria-labelledby="articles-heading" class="section-tinted">
+      <div class="container">
+        <h2 id="articles-heading">Articles</h2>
+        <p class="section-sub">Informational articles and reference pieces I can deep link to when explaining accessibility decisions, team practices, and inclusive product work.</p>
+        <div class="articles-grid" role="list">
+          <article class="article-card" role="listitem">
+            <p class="article-kicker">Accessibility Fundamentals</p>
+            <h3>Understanding Severity, User Impact, and Priority</h3>
+            <p>A guide for product teams on how accessibility issues affect users, how severity is determined, and how to make informed prioritization decisions.</p>
+            <a href="article-severity-user-impact-priority.html" class="article-link">Understanding Severity, User Impact, and Priority article</a>
+          </article>
+          <article class="article-card" role="listitem">
+            <p class="article-kicker">Product Workflows</p>
+            <h3>Finding Accessibility Issues Earlier in the Sprint</h3>
+            <p>How teams can shift accessibility conversations into discovery, design review, acceptance criteria, and QA planning before defects become release blockers.</p>
+            <a href="article-accessibility-earlier-in-sprint.html" class="article-link">Finding Accessibility Issues Earlier in the Sprint article</a>
+          </article>
+          <article class="article-card" role="listitem">
+            <p class="article-kicker">Developer Handoff</p>
+            <h3>Writing Accessibility Bugs Developers Can Act On</h3>
+            <p>A practical breakdown of what to include in Jira tickets so accessibility findings are clear, reproducible, and easier to validate after remediation.</p>
+            <a href="article-accessibility-bugs-developers-can-act-on.html" class="article-link">Writing Accessibility Bugs Developers Can Act On article</a>
+          </article>
+        </div>
+        <div class="articles-action">
+          <a href="articles.html" class="btn btn-outline">View all articles</a>
         </div>
       </div>
     </section>
@@ -562,7 +595,7 @@
       <p>&copy; <span id="year"></span> Tanjina Haque. Built with accessibility first.</p>
       <nav aria-label="Footer navigation">
         <a href="#hero">Back to top</a>
-        <a href="#about">About</a>
+        <a href="#about">About Me</a>
         <a href="#work">Work</a>
         <a href="#contact">Contact Me</a>
       </nav>
@@ -577,6 +610,7 @@
     const passwordForm = document.getElementById('password-form');
     const passwordInput = document.getElementById('portfolio-password');
     const passwordError = document.getElementById('password-error');
+    const passwordToggle = document.getElementById('password-toggle');
 
     function unlockPortfolio() {
       document.body.classList.remove('auth-locked');
@@ -603,6 +637,13 @@
       passwordError.hidden = false;
       passwordInput.value = '';
       passwordInput.focus();
+    });
+
+    passwordToggle.addEventListener('click', () => {
+      const isVisible = passwordInput.type === 'text';
+      passwordInput.type = isVisible ? 'password' : 'text';
+      passwordToggle.setAttribute('aria-label', isVisible ? 'Show password' : 'Hide password');
+      passwordToggle.setAttribute('aria-pressed', String(!isVisible));
     });
 
     // Year
@@ -698,7 +739,7 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.skill-card, .secondary-skill-card, .work-card, .cert-item, .resume-card, .testimonial').forEach(el => {
+    document.querySelectorAll('.skill-card, .secondary-skill-card, .soft-skill-card, .work-card, .article-card, .cert-item, .resume-card, .testimonial').forEach(el => {
       el.classList.add('fade-in');
       observer.observe(el);
     });
