@@ -220,15 +220,16 @@ a:hover { color: var(--clr-accent-hover); }
 }
 
 .password-input-wrap input {
-  padding-right: 3.25rem;
+  padding-right: 4.25rem;
 }
 
 .password-toggle {
   position: absolute;
   top: 50%;
   right: 0.35rem;
-  width: 2.75rem;
+  min-width: 3.5rem;
   height: 2.75rem;
+  padding-inline: 0.7rem;
   border: 0;
   border-radius: var(--radius-sm);
   background: transparent;
@@ -238,6 +239,8 @@ a:hover { color: var(--clr-accent-hover); }
   justify-content: center;
   transform: translateY(-50%);
   cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 700;
 }
 
 .password-toggle:hover {
@@ -247,11 +250,6 @@ a:hover { color: var(--clr-accent-hover); }
 .password-toggle:focus-visible {
   outline: none;
   box-shadow: var(--focus-ring);
-}
-
-.password-toggle svg {
-  width: 1.35rem;
-  height: 1.35rem;
 }
 
 .password-error {

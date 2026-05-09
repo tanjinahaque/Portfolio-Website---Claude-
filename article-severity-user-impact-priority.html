@@ -20,9 +20,7 @@
         <label for="portfolio-password">Password</label>
         <div class="password-input-wrap">
           <input type="password" id="portfolio-password" name="portfolio-password" autocomplete="current-password" required />
-          <button type="button" class="password-toggle" id="password-toggle" aria-label="Show password" aria-pressed="false">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-          </button>
+          <button type="button" class="password-toggle" id="password-toggle" aria-label="Show password" aria-pressed="false">Show</button>
         </div>
       </div>
       <p class="password-error" id="password-error" role="alert" hidden>Incorrect password. Please try again.</p>
@@ -52,6 +50,39 @@
         <p class="hero-eyebrow">Accessibility Fundamentals</p>
         <h1 id="article-heading">Understanding Severity, User Impact, and Priority</h1>
         <p class="article-lead">A practical reference for helping product teams understand what accessibility severity means, how user impact should shape decisions, and why priority is more than a checklist score.</p>
+        <div class="case-study-visual-grid" role="group" aria-label="Visual examples for severity, impact, and priority talking points">
+          <figure class="case-visual">
+            <div class="mock-panel" aria-hidden="true">
+              <div class="mock-panel-body">
+                <div class="mock-alert">Critical: cannot complete checkout</div>
+                <div class="mock-line medium"></div>
+                <div class="mock-line short"></div>
+              </div>
+            </div>
+            <figcaption>Severity framed by the barrier blocking the task</figcaption>
+          </figure>
+          <figure class="case-visual">
+            <div class="mock-panel" aria-hidden="true">
+              <div class="mock-panel-body">
+                <div class="mock-note">Screen reader user misses status update.</div>
+                <div class="mock-note">Keyboard user cannot leave dialog.</div>
+              </div>
+            </div>
+            <figcaption>User impact notes that explain who is affected</figcaption>
+          </figure>
+          <figure class="case-visual">
+            <div class="mock-panel" aria-hidden="true">
+              <div class="mock-panel-body">
+                <div class="mock-table">
+                  <div class="mock-table-cell header"></div><div class="mock-table-cell header"></div><div class="mock-table-cell header"></div>
+                  <div class="mock-table-cell"></div><div class="mock-table-cell"></div><div class="mock-table-cell"></div>
+                  <div class="mock-table-cell"></div><div class="mock-table-cell"></div><div class="mock-table-cell"></div>
+                </div>
+              </div>
+            </div>
+            <figcaption>Priority matrix balancing risk, timing, and ownership</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
     <div class="container article-content">
@@ -81,7 +112,7 @@
     function unlockPortfolio(){document.body.classList.remove('auth-locked');passwordGate.hidden=true;sessionStorage.setItem(AUTH_STORAGE_KEY,'true');}
     if(sessionStorage.getItem(AUTH_STORAGE_KEY)==='true'){unlockPortfolio();}else{passwordInput.focus();}
     passwordForm.addEventListener('submit',event=>{event.preventDefault();if(passwordInput.value===PORTFOLIO_PASSWORD){unlockPortfolio();const mainContent=document.getElementById('main-content');mainContent.setAttribute('tabindex','-1');mainContent.focus();return;}passwordError.hidden=false;passwordInput.value='';passwordInput.focus();});
-    passwordToggle.addEventListener('click',()=>{const isVisible=passwordInput.type==='text';passwordInput.type=isVisible?'password':'text';passwordToggle.setAttribute('aria-label',isVisible?'Show password':'Hide password');passwordToggle.setAttribute('aria-pressed',String(!isVisible));});
+    passwordToggle.addEventListener('click',()=>{const isVisible=passwordInput.type==='text';passwordInput.type=isVisible?'password':'text';passwordToggle.setAttribute('aria-label',isVisible?'Show password':'Hide password');passwordToggle.setAttribute('aria-pressed',String(!isVisible));passwordToggle.textContent=isVisible?'Show':'Hide';});
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>

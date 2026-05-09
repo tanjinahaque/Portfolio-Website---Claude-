@@ -16,7 +16,7 @@
       <p class="password-kicker">Private Portfolio</p>
       <h1 id="password-heading">Enter Password</h1>
       <p id="password-help">Please enter the password to view Tanjina Haque's article.</p>
-      <div class="password-field"><label for="portfolio-password">Password</label><div class="password-input-wrap"><input type="password" id="portfolio-password" name="portfolio-password" autocomplete="current-password" required /><button type="button" class="password-toggle" id="password-toggle" aria-label="Show password" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></div></div>
+      <div class="password-field"><label for="portfolio-password">Password</label><div class="password-input-wrap"><input type="password" id="portfolio-password" name="portfolio-password" autocomplete="current-password" required /><button type="button" class="password-toggle" id="password-toggle" aria-label="Show password" aria-pressed="false">Show</button></div></div>
       <p class="password-error" id="password-error" role="alert" hidden>Incorrect password. Please try again.</p>
       <button type="submit" class="btn btn-primary">Unlock Article</button>
     </form>
@@ -31,6 +31,36 @@
         <p class="hero-eyebrow">Code Quality</p>
         <h1 id="article-heading">The Importance of Semantic HTML</h1>
         <p class="article-lead">Semantic HTML gives browsers and assistive technologies a clear map of the page. It is one of the simplest ways to make an experience more durable, understandable, and easier to test.</p>
+        <div class="case-study-visual-grid" role="group" aria-label="Visual examples for semantic HTML talking points">
+          <figure class="case-visual">
+            <div class="mock-panel" aria-hidden="true">
+              <div class="mock-panel-body">
+                <div class="mock-button"></div>
+                <div class="mock-note">Native button: role, name, keyboard activation</div>
+              </div>
+            </div>
+            <figcaption>Native controls carrying built-in meaning</figcaption>
+          </figure>
+          <figure class="case-visual">
+            <div class="mock-panel" aria-hidden="true">
+              <div class="mock-panel-body">
+                <div class="mock-card mock-focus"><div class="mock-card-line"></div><div class="mock-card-line short"></div></div>
+                <div class="mock-line medium"></div>
+              </div>
+            </div>
+            <figcaption>Card link with a clear accessible destination</figcaption>
+          </figure>
+          <figure class="case-visual">
+            <div class="mock-panel" aria-hidden="true">
+              <div class="mock-panel-body">
+                <div class="mock-note">Header</div>
+                <div class="mock-note">Main</div>
+                <div class="mock-note">Footer</div>
+              </div>
+            </div>
+            <figcaption>Landmarks that help users jump through the page</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
     <div class="container article-content">
@@ -55,7 +85,7 @@
   </main>
   <footer role="contentinfo"><div class="container footer-inner"><p>&copy; <span id="year"></span> Tanjina Haque. Built with accessibility first.</p><nav aria-label="Footer navigation"><a href="articles.html">Articles</a><a href="index.html#contact">Contact Me</a></nav></div></footer>
   <script>
-    const PORTFOLIO_PASSWORD='portfolio2026',AUTH_STORAGE_KEY='portfolioUnlocked';const passwordGate=document.getElementById('password-gate'),passwordForm=document.getElementById('password-form'),passwordInput=document.getElementById('portfolio-password'),passwordError=document.getElementById('password-error'),passwordToggle=document.getElementById('password-toggle');function unlockPortfolio(){document.body.classList.remove('auth-locked');passwordGate.hidden=true;sessionStorage.setItem(AUTH_STORAGE_KEY,'true');}if(sessionStorage.getItem(AUTH_STORAGE_KEY)==='true'){unlockPortfolio();}else{passwordInput.focus();}passwordForm.addEventListener('submit',event=>{event.preventDefault();if(passwordInput.value===PORTFOLIO_PASSWORD){unlockPortfolio();const mainContent=document.getElementById('main-content');mainContent.setAttribute('tabindex','-1');mainContent.focus();return;}passwordError.hidden=false;passwordInput.value='';passwordInput.focus();});passwordToggle.addEventListener('click',()=>{const isVisible=passwordInput.type==='text';passwordInput.type=isVisible?'password':'text';passwordToggle.setAttribute('aria-label',isVisible?'Show password':'Hide password');passwordToggle.setAttribute('aria-pressed',String(!isVisible));});document.getElementById('year').textContent=new Date().getFullYear();
+    const PORTFOLIO_PASSWORD='portfolio2026',AUTH_STORAGE_KEY='portfolioUnlocked';const passwordGate=document.getElementById('password-gate'),passwordForm=document.getElementById('password-form'),passwordInput=document.getElementById('portfolio-password'),passwordError=document.getElementById('password-error'),passwordToggle=document.getElementById('password-toggle');function unlockPortfolio(){document.body.classList.remove('auth-locked');passwordGate.hidden=true;sessionStorage.setItem(AUTH_STORAGE_KEY,'true');}if(sessionStorage.getItem(AUTH_STORAGE_KEY)==='true'){unlockPortfolio();}else{passwordInput.focus();}passwordForm.addEventListener('submit',event=>{event.preventDefault();if(passwordInput.value===PORTFOLIO_PASSWORD){unlockPortfolio();const mainContent=document.getElementById('main-content');mainContent.setAttribute('tabindex','-1');mainContent.focus();return;}passwordError.hidden=false;passwordInput.value='';passwordInput.focus();});passwordToggle.addEventListener('click',()=>{const isVisible=passwordInput.type==='text';passwordInput.type=isVisible?'password':'text';passwordToggle.setAttribute('aria-label',isVisible?'Show password':'Hide password');passwordToggle.setAttribute('aria-pressed',String(!isVisible));passwordToggle.textContent=isVisible?'Show':'Hide';});document.getElementById('year').textContent=new Date().getFullYear();
   </script>
 </body>
 </html>
