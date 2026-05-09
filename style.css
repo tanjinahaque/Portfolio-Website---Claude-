@@ -555,6 +555,18 @@ header nav ul a:focus-visible {
   animation: blob-float 8s ease-in-out infinite;
 }
 
+.hero-floral-ornament {
+  position: absolute;
+  top: clamp(-6.3rem, -7vw, -3.75rem);
+  left: clamp(19rem, 42vw, 29rem);
+  width: clamp(24rem, 44vw, 46rem);
+  opacity: 0.22;
+  transform: scaleX(-1) rotate(-4deg);
+  transform-origin: center;
+  z-index: 0;
+  pointer-events: none;
+}
+
 @keyframes blob-float {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-20px) rotate(6deg); }
@@ -608,10 +620,19 @@ header nav ul a:focus-visible {
   margin-bottom: var(--space-lg);
 }
 
+.hero-cta-cluster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+}
+
 .hero-actions {
   display: flex;
   gap: var(--space-sm);
   flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: var(--space-lg);
 }
 
@@ -620,6 +641,8 @@ header nav ul a:focus-visible {
   gap: 0.85rem;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   color: var(--clr-text-muted);
 }
 
@@ -2644,6 +2667,14 @@ footer nav a:focus-visible {
     opacity: 0.5;
   }
 
+  .hero-floral-ornament {
+    top: clamp(-1.5rem, 2vw, 1rem);
+    left: auto;
+    right: clamp(-10rem, -18vw, -5.5rem);
+    width: clamp(19rem, 62vw, 28rem);
+    opacity: 0.08;
+  }
+
   .skill-detail-hero,
   .case-study-hero,
   .article-hero {
@@ -2688,6 +2719,14 @@ footer nav a:focus-visible {
   .case-study-hero h1,
   .article-hero h1 {
     font-size: clamp(2.3rem, 13vw, 3.2rem);
+  }
+
+  .hero-floral-ornament {
+    left: auto;
+    right: clamp(-11rem, -34vw, -7rem);
+    top: 1rem;
+    width: clamp(18rem, 78vw, 23rem);
+    opacity: 0.05;
   }
 
   .hero-standards {
@@ -2743,9 +2782,14 @@ footer nav a:focus-visible {
     padding: var(--space-sm);
   }
 
+  .hero-cta-cluster,
+  .hero-actions {
+    width: 100%;
+  }
+
   .hero-actions {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
   .btn { width: 100%; justify-content: center; }
 
@@ -2784,12 +2828,13 @@ footer nav a:focus-visible {
     background: ButtonText;
     color: ButtonFace;
   }
-  .hero-blob { display: none; }
+  .hero-blob,
+  .hero-floral-ornament { display: none; }
 }
 
 /* Print styles */
 @media print {
-  header, .hero-blob, .hamburger, .hero-actions, .contact-form { display: none; }
+  header, .hero-blob, .hero-floral-ornament, .hamburger, .hero-actions, .contact-form { display: none; }
   section { padding-block: 1.5rem; }
   * { box-shadow: none !important; }
 }
